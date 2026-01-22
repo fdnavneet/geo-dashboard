@@ -2,6 +2,8 @@
   A React-based web dashboard to visualize geospatial project data with map integration, pagination, filtering, and search.
 
 ---
+## Live Demo
+https://geo-dashboard-rho.vercel.app/
 
 ## Features
 - Interactive map using Leaflet
