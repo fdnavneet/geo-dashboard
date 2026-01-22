@@ -6,13 +6,20 @@
 https://geo-dashboard-rho.vercel.app/
 
 ## Features
-- Interactive map using Leaflet
-- Project list table with pagination
-- Search by project name and status (Active/Inactive)
-- Row selection highlights map marker
-- Sorting by date
-- Mock API using JSON Server (500+ records)
-- Responsive modern UI (React + Tailwind CSS)
+- Paginated project list (server-side)
+- Search by project name and status
+- Sorting by name, status, and updated date
+- Interactive map with markers
+- Row click highlights marker and vice versa
+- URL based pagination persistence
+
+---
+## Architecture Decisions
+- Server-side pagination using json-server for handling large datasets (500+ records).
+- Client-side sorting and filtering for fast UI response.
+- React Leaflet for map visualization due to simplicity and performance.
+- React Router search params for preserving pagination state on refresh.
+- Component-based architecture for scalability and maintainability.
 
 ---
 
