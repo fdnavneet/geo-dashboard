@@ -1,15 +1,25 @@
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+
 import { fetchProjects } from "../api/projectApi";
 import Table from "../components/Table";
 import Pagination from "../components/Pegination";
 import MapView from "../components/MapView";
 
 export default function Dashboard() {
+  const [params, setParams] = useSearchParams();
   const [projects, setProjects] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(() => {
+    return Number(params.get("page")) || 1;
+  });
   const [searchText, setSearchText] = useState("");
   const [sortBy, setSortBy] = useState(null);
   const [selected, setSelected] = useState(null);
+
+  useEffect(() => {
+  setParams({ page });
+}, [page]);
+
 
   useEffect(() => {
     const text = searchText.trim().toLowerCase();
